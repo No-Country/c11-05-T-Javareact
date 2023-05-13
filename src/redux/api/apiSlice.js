@@ -6,10 +6,10 @@ export const apiSlice = createApi({
 		baseUrl: 'url',
 	}),
 	endpoints: (builder) => ({
-		getCursos: builder.query({
+		getServicios: builder.query({
 			query: () => 'endpoint',
 		}),
 	}),
 });
 
-export const { useGetCursosQuery } = apiSlice;
+export const { useGetServiciosQuery } = apiSlice;
