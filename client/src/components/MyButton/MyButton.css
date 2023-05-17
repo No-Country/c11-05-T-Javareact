@@ -1,0 +1,42 @@
+.primary {
+	color: #fff;
+	background-color: var(--secondaryColor);
+	padding: 16px 32px;
+	border: 2px solid var(--secondaryColor);
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	-ms-border-radius: 50px;
+	-o-border-radius: 50px;
+	transition: all 0.2s ease-in;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	-ms-transition: all 0.2s ease-in;
+	-o-transition: all 0.2s ease-in;
+}
+
+.primary:hover {
+	background-color: var(--secondaryColorHover);
+	border-color: var(--secondaryColorHover);
+}
+
+.secondary {
+	background-color: transparent;
+	border: 2px solid var(--secondaryColor);
+	padding: 16px 32px;
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	-ms-border-radius: 50px;
+	-o-border-radius: 50px;
+	transition: all 0.2s ease-in;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	-ms-transition: all 0.2s ease-in;
+	-o-transition: all 0.2s ease-in;
+}
+
+.secondary:hover {
+	color: #fff;
+	background-color: var(--secondaryColor);
+}
