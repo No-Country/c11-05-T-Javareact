@@ -8,62 +8,72 @@ const RegisterForm = () => {
     }
 
     return (
-        <div className='bg-red-500'>
-            <h2>¡Sumate a nuestro equipo!</h2>
-            <form  onSubmit={ handleSubmit(onSubmit) }>
-                <div>
-                    <label>Nombre</label>
-                    <input type='text' name='' {...register('nombre',{
+        <div className='container w-full mx-auto p-20 bg-white border '>
+            <h2 className="py-6 pb-9 lg:ml-14 text-5xl text-red-500 font-extrabold">Registro como profesional</h2>
+            <form className="grid grid-cols-2 gap-7 mx-auto justify-center" onSubmit={ handleSubmit(onSubmit) }>
+                <div className="">
+                    <input className="bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto border-2 ring-1 ring-red-400 placeholder-black" type='text' name=''placeholder="Nombre"{...register('nombre',{
                         required: true,
                         maxLength: 12
                     })} />
-                    {errors.nombre?.type === 'required' && <small>El campo es requerido</small>}
+                    {errors.nombre?.type === 'required' && <p className="font-extralight text-sm p-2">El campo es requerido</p>}
                 </div>
                 <div>
-                    <label>Apellido</label>
-                    <input type='text' name='' {...register('apellido',{
+                    <input className="bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black" type='text' name='' placeholder="Apellido" {...register('apellido',{
                         required: true,
                         maxLength: 12
                     })}/>
-                    {errors.apellido?.type === 'required' && <small>El campo es requerido</small>}
+                    {errors.apellido?.type === 'required' && <p className="font-extralight text-sm p-2">El campo es requerido</p>}
                 </div>
                 <div>
-                    <label>Celular</label>
-                    <input type='text' name='' {...register('celular',{
-                        pattern: /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/
-                    })}/>
-                    {errors.celular?.type === 'pattern' && <small>El valor ingresado no corresponde a un numero de telefono</small>}
-                </div>
-                <div>
-                    <label>Email</label>
-                    <input type='text' name='' {...register('email',{
+                    <input className="bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black" type='text' name='' placeholder="Correo electronico" {...register('email',{
                         pattern: /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
                     })} />
-                    {errors.email?.type === 'pattern' && <p>No es una dirección valida</p>}
+                    {errors.email?.type === 'pattern' && <p className="font-extralight text-sm p-2">No es una dirección valida</p>}
                 </div>
-                <section>
-                    <h2>¿Eres mayor de edad?</h2>
-                    <div>
-                        <label>Si</label>
-                        <input type='radio' value={"Si"} {...register('radio')}/>
-                    </div>
-                    <div>
-                        <label>No</label>
-                        <input type='radio' value={"No"} {...register('radio')}/>
-                    </div>
-                </section>
                 <div>
-                    <label>Nacionalidad</label>
-                    <select {...register('nacionalidad', {
+                    <input className="bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black" type='text' name='' placeholder="Confirmar correo" {...register('emailConfirm',{
+                        pattern: /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+                    })} />
+                    {errors.email?.type === 'pattern' && <p className="font-extralight text-sm p-2">El correo ingresado no coincide</p>}
+                </div>
+                
+                <div>
+                    <input className="bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black" type='password' name='' placeholder="Elige una contraseña" {...register('password',{
+                        pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+                    })} />
+                    {errors.password?.type === 'pattern' && <p className="font-extralight text-sm p-2">La contraseña debe tener al menos una mayúscula, una minuscula y un número</p>}
+                </div>
+                
+                <div>
+                    <input className="bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black" type='password' name='' placeholder="Confirma la contraseña" {...register('passwordConfirm',{
+                        pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+
+                    })} />
+                </div>
+                <div>
+                    <select className="bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black lg:w-2/" {...register('profesion', {
                         required:true
                     })}>
-                        <option value={"ar"}>Argentina</option>
-                        <option value={"ar"}>México</option>
-                        <option value={"ar"}>Panamá</option>
+                        <option selected={true} disabled={true} value={""}>Profesión</option>
+                        <option value={"plomero"}>Plomero</option>
+                        <option value={"albañol"}>Albañil</option>
+                        <option value={"peluquero"}>Peluquero</option>
                     </select>
-                    {errors.nacionalidad?.type === 'required' && <small>Por favor, seleccione una nacionalidad</small>}
+                    {errors.profesion?.type === 'required' && <p className="font-extralight text-sm p-2">Por favor, seleccione una profesión</p>}
                 </div>
-                <input type='submit' value={"Enviar"} />
+                <div>
+                    <input className="bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black" type='text' name='' placeholder="Pais" {...register('pais')} />
+                </div>
+                <div>
+                    <input className="bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black" type='text' name='' placeholder="Provincia" {...register('provincia')} />
+                </div>
+                <div>
+                    <input className="bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black" type='text' name='' placeholder="Localidad" {...register('localidad')} />
+                </div>
+                <div className="grid col-span-2	pr-5 justify-end">
+                    <input className=" bg-red-600 text-white m-10 p-4 rounded-3xl shadow mx-auto" type='submit' value={"Registrarse"} />
+                </div>
             </form>  
         </div>
     )
