@@ -1,0 +1,161 @@
+.div-input {
+  width: 614px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 35px;
+  border: solid 2px red;
+  position: relative;
+}
+.input-home {
+  margin-left: 90px;
+  font-size: 20px;
+}
+.input-home:focus {
+  outline: none;
+  color: black;
+}
+.input-home::placeholder {
+  color: black;
+  font-size: 20px;
+  font-weight: 300;
+}
+.lupita-input {
+  position: absolute;
+  font-size: 24px;
+  color: #3ce2fa;
+  top: 20px;
+  left: 36px;
+}
+.lineas {
+  position: absolute;
+  height: 3.5px;
+  background: #3ce2fa;
+}
+.linea-1 {
+  width: 35px;
+  margin-top: 16px;
+  margin-left: 551px;
+}
+.linea-2 {
+  width: 22px;
+  margin-top: 26px;
+  margin-left: 557px;
+}
+
+.linea-3 {
+  width: 9px;
+  margin-top: 37px;
+  margin-left: 563px;
+}
+.titulo-home {
+  color: #fa543c;
+  font-size: 60px;
+  font-weight: 800;
+  margin-top: -10px;
+}
+.div-container__description {
+  display: flex;
+  margin: auto;
+  margin-top: 100px;
+  flex-direction: row;
+  justify-content: center;
+  width: 1216px;
+  height: 336px;
+  gap: 6rem;
+  
+}
+.div-container__titulo {
+  width: 612px;
+}
+.button-explorar {
+  width: 110px;
+  height: 48px;
+  border: 1px solid #fa543c;
+  border-radius: 50px;
+  font-weight: 300;
+  color: #486284;
+  margin-top: 25px;
+}
+.button-explorar:hover{
+  background: #fa543c;
+  color: #fff;
+}
+.div-container__img {
+  width: 612px;
+  height: 336px;
+}
+
+/*---------- Carrusel ---------- */
+
+.container-carrusel {
+  margin: 250px auto;
+  overflow-x: hidden;
+  max-width: 1218px;
+  height: 350px;
+}
+.carrusel {
+  display: flex;
+  cursor: grab;
+}
+.item {
+  height: 300px;
+  min-width: 372px;
+  padding: 2rem;
+}
+.item img {
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-radius: 15px;
+}
+
+/*------------ trabaja con nosotros ------------*/
+.button-trabaja {
+  width: 290px;
+  height: 48px;
+  border: 1px solid #fa543c;
+  border-radius: 50px;
+  font-weight: 300;
+  color: #486284;
+  margin-top: 25px;
+}
+.button-trabaja:hover{
+  background: #fa543c;
+  color: #fff;
+}
+
+
+/*-----------Testimonios ---------*/
+
+.titulo-testimonios{
+  color: #fa543c;
+  font-size: 60px;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  margin-top: 250px;
+}
+
+.container-carrusel__dos{
+  margin: 50px auto;
+  overflow-x: hidden;
+  max-width: 1218px;
+  height: 350px;
+}
+.carrusel__dos{
+  display: flex;
+  cursor: grab;
+}
+.item__dos{
+  height: 300px;
+  min-width: 372px;
+  padding: 2rem;
+}
+
+.item__dos img{
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-radius: 15px;
+  
+}
