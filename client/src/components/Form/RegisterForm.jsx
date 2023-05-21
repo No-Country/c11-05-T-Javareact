@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import MyButton from '../Common/MyButton/MyButton';
+import MyTitle from '../Common/MyTitle/MyTitle';
 
 const RegisterForm = () => {
 	const {
@@ -19,16 +21,16 @@ const RegisterForm = () => {
 	};
 
 	return (
-		<div className='container w-full mx-auto p-20 bg-white border '>
-			<h2 className='py-6 pb-9 lg:ml-14 text-5xl text-red-500 font-extrabold'>
-				Registro como profesional
-			</h2>
+		<div className='min-h-screen w-[1300px] mx-auto flex flex-col gap-16 justify-center mt-12'>
+			<div className='items-start w-full'>
+				<MyTitle>Registro como profesional</MyTitle>
+			</div>
 			<form
-				className='grid grid-cols-2 gap-7 mx-auto justify-center'
+				className='grid grid-cols-2 gap-7 w-full'
 				onSubmit={handleSubmit(onSubmit)}>
-				<div className=''>
+				<div className='flex flex-col items-center'>
 					<input
-						className='bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto border-2 ring-1 ring-red-400 placeholder-black text-lg'
+						className='bg-white max-w-xl p-5 rounded-3xl shadow w-full mx-auto border-2 ring-1 ring-red-400 placeholder-black text-lg h-fit'
 						type='text'
 						name=''
 						placeholder='Nombre'
@@ -41,9 +43,9 @@ const RegisterForm = () => {
 						<p className='font-extralight text-sm p-2'>El campo es requerido</p>
 					)}
 				</div>
-				<div>
+				<div className='flex flex-col items-center'>
 					<input
-						className='bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg'
+						className='bg-white max-w-xl p-5 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg h-fit'
 						type='text'
 						name=''
 						placeholder='Apellido'
@@ -56,9 +58,9 @@ const RegisterForm = () => {
 						<p className='font-extralight text-sm p-2'>El campo es requerido</p>
 					)}
 				</div>
-				<div>
+				<div className='flex flex-col items-center'>
 					<input
-						className='bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg'
+						className='bg-white max-w-xl p-5 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg h-fit'
 						type='text'
 						name=''
 						placeholder='Correo electronico'
@@ -71,9 +73,9 @@ const RegisterForm = () => {
 						<p className='font-extralight text-sm p-2'>No es una dirección valida</p>
 					)}
 				</div>
-				<div>
+				<div className='flex flex-col items-center'>
 					<input
-						className='bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg'
+						className='bg-white max-w-xl p-5 rounded-3xl shadow w-full ring-1 ring-red-400 placeholder-black text-lg h-fit'
 						type='text'
 						name='confirmEmail'
 						placeholder='Confirmar correo'
@@ -87,10 +89,9 @@ const RegisterForm = () => {
 						</p>
 					)}
 				</div>
-
-				<div>
+				<div className='flex flex-col items-center'>
 					<input
-						className='bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg'
+						className='bg-white max-w-xl p-5 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg h-fit'
 						type='password'
 						name=''
 						placeholder='Elige una contraseña'
@@ -105,21 +106,18 @@ const RegisterForm = () => {
 						</p>
 					)}
 				</div>
-
-				<div>
-					<input
-						className='bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg'
-						type='password'
-						name=''
-						placeholder='Confirma la contraseña'
-						{...register('passwordConfirm', {
-							pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
-						})}
-					/>
-				</div>
-				<div>
+				<input
+					className='bg-white max-w-xl p-5 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg h-fit'
+					type='password'
+					name=''
+					placeholder='Confirma la contraseña'
+					{...register('passwordConfirm', {
+						pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
+					})}
+				/>
+				<div className='flex flex-col items-center'>
 					<select
-						className='bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg lg:w-2/'
+						className='bg-white max-w-xl p-5 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg lg:w-2/'
 						{...register('profesion', {
 							required: true,
 						})}>
@@ -136,39 +134,31 @@ const RegisterForm = () => {
 						</p>
 					)}
 				</div>
-				<div>
-					<input
-						className='bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg'
-						type='text'
-						name=''
-						placeholder='Pais'
-						{...register('pais')}
-					/>
-				</div>
-				<div>
-					<input
-						className='bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg'
-						type='text'
-						name=''
-						placeholder='Provincia'
-						{...register('provincia')}
-					/>
-				</div>
-				<div>
-					<input
-						className='bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg'
-						type='text'
-						name=''
-						placeholder='Localidad'
-						{...register('localidad')}
-					/>
-				</div>
-				<div className='grid col-span-2	pr-5 justify-end'>
-					<input
-						className=' bg-red-600 text-white m-10 p-4 rounded-3xl shadow mx-auto'
-						type='submit'
-						value={'Registrarse'}
-					/>
+				<input
+					className='bg-white max-w-xl p-5 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg h-fit'
+					type='text'
+					name=''
+					placeholder='Pais'
+					{...register('pais')}
+				/>
+				<input
+					className='bg-white max-w-xl p-5 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg'
+					type='text'
+					name=''
+					placeholder='Provincia'
+					{...register('provincia')}
+				/>
+				<input
+					className='bg-white max-w-xl p-5 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg'
+					type='text'
+					name=''
+					placeholder='Localidad'
+					{...register('localidad')}
+				/>
+				<div className='col-start-2 justify-self-end mr-20'>
+					<MyButton type='submit' typeStyle='primary'>
+						Registrarse
+					</MyButton>
 				</div>
 			</form>
 			<div className='hidden modal absolute bottom-0 left-0 right-0 top-0 place-items-center '>

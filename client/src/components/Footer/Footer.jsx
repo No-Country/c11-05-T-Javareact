@@ -5,7 +5,7 @@ import Logo from '../../assets/Logo.svg';
 
 const Footer = () => {
 	return (
-		<div className='w-full py-16 bg-[--primaryColor]'>
+		<div className='w-full py-16 bg-[--primaryColor] text-[--backgroundColor]'>
 			<div className='m-auto flex justify-between items-center w-[80%]'>
 				<div className='flex justify-between w-1/4'>
 					<div className='flex flex-col items-center gap-1'>

@@ -1,0 +1,49 @@
+.div-input {
+	width: 614px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 35px;
+	border: 2px solid var(--secondaryColor);
+	position: relative;
+}
+.input-home {
+	margin-left: 90px;
+	font-size: 20px;
+}
+.input-home:focus {
+	outline: none;
+	color: black;
+}
+.input-home::placeholder {
+	color: black;
+	font-size: 20px;
+	font-weight: 300;
+}
+.lupita-input {
+	position: absolute;
+	font-size: 24px;
+	color: var(--primaryColor);
+	top: 20px;
+	left: 36px;
+}
+.lineas {
+	position: absolute;
+	height: 3.5px;
+	background: var(--primaryColor);
+}
+.linea-1 {
+	width: 35px;
+	margin-top: 16px;
+	margin-left: 551px;
+}
+.linea-2 {
+	width: 22px;
+	margin-top: 26px;
+	margin-left: 557px;
+}
+
+.linea-3 {
+	width: 9px;
+	margin-top: 37px;
+	margin-left: 563px;
+}

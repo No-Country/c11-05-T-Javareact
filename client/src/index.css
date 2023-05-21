@@ -11,11 +11,11 @@
 
 /* Aquí definimos las Custom properties */
 :root {
-	--primaryColor: #3ce2fa;
-	--secondaryColor: #fa543c;
-	--secondaryColorHover: #e02306;
-	--tertiaryColor: ;
-	--backgroundColor: #ededf4;
+	--primaryColor: #0d2231;
+	--secondaryColor: #ff7f5d;
+	--secondaryColorHover: hsl(13, 100%, 50%);
+	--tertiaryColor: #53d46b;
+	--backgroundColor: #f0f0f2;
 	--fontPrimary: 'Galano', sans-serif;
 }
 

@@ -1,0 +1,33 @@
+.card {
+	width: 375px;
+	height: 350px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #fff;
+	overflow: hidden;
+	box-shadow: 0 0 10px 2px #0000004b;
+	border-radius: 25px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	-ms-border-radius: 25px;
+	-o-border-radius: 25px;
+}
+
+.card-img {
+	object-fit: cover;
+	aspect-ratio: 1/1;
+	overflow: hidden;
+}
+
+.card-content {
+	padding: 1rem;
+	background-color: var(--secondaryColor);
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.card-content button {
+	align-self: flex-end;
+}
