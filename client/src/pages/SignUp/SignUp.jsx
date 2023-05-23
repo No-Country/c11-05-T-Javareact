@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Input from "../../components/Form/InputText";
 
 const SignUp = () => {
-  const { register, formState: { errors }, handleSubmit, getValues} = useForm();
+  const { register, formState: { errors }, handleSubmit} = useForm();
   const onSubmit = (data) => {
     console.log(data);
     document.querySelector('.modal').style.display = 'grid';
@@ -55,8 +55,8 @@ const SignUp = () => {
         </div>
         
       </form>
-      <div className="hidden modal absolute bottom-0 left-0 right-0 top-0 place-items-center">
-        <p className="p-10 max-w-sm rounded bg-green-400">Te has registrado correctamente</p>
+      <div className="hidden grid modal absolute bottom-0 left-0 right-0 top-0 place-items-center">
+        <p className="bg-red-500 p-10 max-w-sm rounded">Te has registrado correctamente!</p>
       </div>
     </div>
   );
