@@ -1,21 +1,29 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import Input from "../../components/Form/InputText";
+import Input from "../../../components/Form/InputText";
 
-const SignUp = () => {
+const SignUpProfesional = () => {
   const { register, formState: { errors }, handleSubmit} = useForm();
+  const [showModal, setShowModal] = useState(false);
+
   const onSubmit = (data) => {
     console.log(data);
-    document.querySelector('.modal').style.display = 'grid';
+    setShowModal(true);
   };
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+
+  
 
   const inputs = [
     {type:"text", name:"nombre", placeholder:"Nombre", register:{register}, validation:{required: true,maxLength: 12}, textAlert:"El campo es requerido"},
     {type:"text", name:"apellido", placeholder:"Apellido", register:{register}, validation:{required: true,maxLength: 12}, textAlert:"El campo es requerido"},
     {type:"text", name:"email", placeholder:"Correo electronico", register:{register}, validation:{pattern: /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/}, textAlert:"No es una dirección de correo valida"},
-    {type:"text", name:"confirmEmail", placeholder:"Confirmar correo electronico", register:{register}, validation:{pattern: /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/}, textAlert:""},
-    {type:"password", name:"password", placeholder:"Contraseña", register:{register}, validation:{pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/}, textAlert:"Minimo 8 caracteres, una minuscula, una mayuscula y un numero"},
-    {type:"password", name:"confirmPassword", placeholder:"Confirmar contraseña", register:{register}, validation:{pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/}, textAlert:"La contraseña ingresada no coincide"},
+    {type:"text", name: "confirmEmail", placeholder: "Confirmar correo electrónico", validation: { validate: value => value === watch('email') || "Los correos no coinciden" }, textAlert: "Los correos no coinciden" },    
+    {type:"password", name: "password", placeholder: "Contraseña", validation: { pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/ }, passwordAlert: "Mínimo 8 caracteres, una minúscula, una mayúscula y un número" },
+    {type:"password", name: "confirmPassword", placeholder: "Confirmar contraseña", register: { register }, validation: { required: true, validate: value => value === watch('password') || "Las contraseñas no coinciden" }, textAlert: "Las contraseñas no coinciden" },
     {type:"text", name:"pais", placeholder:"Pais", register:{register}, validation:{required: true,maxLength: 12}, textAlert:"El campo es requerido"},
     {type:"text", name:"provincia", placeholder:"Provincia", register:{register}, validation:{required: true,maxLength: 12}, textAlert:"El campo es requerido"},
     {type:"text", name:"localidad", placeholder:"Localidad", register:{register}, validation:{required: true,maxLength: 12}, textAlert:"El campo es requerido"},
@@ -55,11 +63,20 @@ const SignUp = () => {
         </div>
         
       </form>
-      <div className="hidden grid modal absolute bottom-0 left-0 right-0 top-0 place-items-center">
-        <p className="bg-red-500 p-10 max-w-sm rounded">Te has registrado correctamente!</p>
-      </div>
-    </div>
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="bg-gray-800 bg-opacity-50 absolute inset-0 flex items-center justify-center">
+            <div className="bg-white rounded-lg p-6 max-w-sm">
+              <p className="text-center text-red-500 text-xl mb-4">Te has registrado correctamente!</p>
+              <div className="flex items-center justify-center">
+                <button className="text-center bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none" onClick={closeModal}>Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>  
   );
 };
 
-export default SignUp;
+export default SignUpProfesional;
