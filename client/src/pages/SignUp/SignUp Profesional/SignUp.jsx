@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Input from "../../../components/Form/InputText";
 
 const SignUpProfesional = () => {
-  const { register, formState: { errors }, handleSubmit} = useForm();
+  const { register, formState: { errors }, handleSubmit, watch} = useForm();
   const [showModal, setShowModal] = useState(false);
 
   const onSubmit = (data) => {
