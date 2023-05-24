@@ -56,7 +56,7 @@ const Home = () => {
 			</div>
 
 			{/* Testimonios */}
-			<div className='text-center mt-[250px]'>
+			<div className='text-center my-[250px]'>
 				<MyTitle>Testimonios</MyTitle>
 				<div className='mt-[50px]'>
 					<Carousel content={images} />
