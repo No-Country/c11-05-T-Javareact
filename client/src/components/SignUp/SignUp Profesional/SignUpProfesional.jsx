@@ -14,92 +14,24 @@ const SignUpProfesional = () => {
 	const [showModal, setShowModal] = useState(false);
 
 	const onSubmit = (data) => {
-		console.log(data);
+		const formData = {
+			name: data.nombre,
+			lastname: data.apellido,
+			email: data.email,
+			password: data.password,
+			pais: data.pais,
+			provincia: data.provincia,
+			localidad: data.localidad,
+			profesion: data.profesion
+		};
+
+		console.log(formData);
 		setShowModal(true);
 	};
 	const closeModal = () => {
 		setShowModal(false);
 	};
 
-	const inputs = [
-		{
-			type: 'text',
-			name: 'nombre',
-			placeholder: 'Nombre',
-			register: { register },
-			validation: { required: true, maxLength: 12 },
-			textAlert: 'El campo es requerido',
-		},
-		{
-			type: 'text',
-			name: 'apellido',
-			placeholder: 'Apellido',
-			register: { register },
-			validation: { required: true, maxLength: 12 },
-			textAlert: 'El campo es requerido',
-		},
-		{
-			type: 'text',
-			name: 'email',
-			placeholder: 'Correo electronico',
-			register: { register },
-			validation: { pattern: /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/ },
-			textAlert: 'No es una dirección de correo valida',
-		},
-		{
-			type: 'text',
-			name: 'confirmEmail',
-			placeholder: 'Confirmar correo electrónico',
-			validation: {
-				validate: (value) => value === watch('email') || 'Los correos no coinciden',
-			},
-			textAlert: 'Los correos no coinciden',
-		},
-		{
-			type: 'password',
-			name: 'password',
-			placeholder: 'Contraseña',
-			validation: { pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/ },
-			passwordAlert:
-				'Mínimo 8 caracteres, una minúscula, una mayúscula y un número',
-		},
-		{
-			type: 'password',
-			name: 'confirmPassword',
-			placeholder: 'Confirmar contraseña',
-			register: { register },
-			validation: {
-				required: true,
-				validate: (value) =>
-					value === watch('password') || 'Las contraseñas no coinciden',
-			},
-			textAlert: 'Las contraseñas no coinciden',
-		},
-		{
-			type: 'text',
-			name: 'pais',
-			placeholder: 'Pais',
-			register: { register },
-			validation: { required: true, maxLength: 12 },
-			textAlert: 'El campo es requerido',
-		},
-		{
-			type: 'text',
-			name: 'provincia',
-			placeholder: 'Provincia',
-			register: { register },
-			validation: { required: true, maxLength: 12 },
-			textAlert: 'El campo es requerido',
-		},
-		{
-			type: 'text',
-			name: 'localidad',
-			placeholder: 'Localidad',
-			register: { register },
-			validation: { required: true, maxLength: 12 },
-			textAlert: 'El campo es requerido',
-		},
-	];
 
 	return (
 		<div className='container w-full my-28 mx-auto p-16 bg-white flex flex-col gap-16'>
@@ -107,19 +39,88 @@ const SignUpProfesional = () => {
 			<form
 				className='grid grid-cols-2 gap-7 justify-center'
 				onSubmit={handleSubmit(onSubmit)}>
-				{inputs.map((input, index) => (
-					<Input
-						key={index}
-						type={input.type}
-						name={input.name}
-						placeholder={input.placeholder}
-						register={register}
-						validation={input.validation}
-						errors={errors}
-						compare={input.compare}
-						textAlert={input.textAlert}
-					/>
-				))}
+				<Input
+				type="text"
+				name="nombre"
+				placeholder="Nombre"
+				register={register}
+				validation={{ required: true, maxLength: 12 }}
+				errors={errors}
+				textAlert="El campo es requerido"
+				/>
+				<Input
+				type="text"
+				name="apellido"
+				placeholder="Apellido"
+				register={register}
+				validation={{ required: true, maxLength: 12 }}
+				errors={errors}
+				textAlert="El campo es requerido"
+				/>
+				<Input
+				type="text"
+				name="email"
+				placeholder="Correo electrónico"
+				register={register}
+				validation={{ required: true, pattern: /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/ }}
+				errors={errors}
+				textAlert="No es una dirección de correo válida"
+				/>
+				<Input
+				type="text"
+				name="confirmEmail"
+				placeholder="Confirmar correo electrónico"
+				register={register}
+				validation={{ required: true, validate: value => value === watch('email') || "Los correos no coinciden" }}
+				errors={errors}
+				textAlert="Los correos no coinciden"
+				/>
+				<Input
+				type="password"
+				name="password"
+				placeholder="Contraseña"
+				register={register}
+				validation={{ pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/ }}
+				errors={errors}
+				textAlert="Mínimo 8 caracteres, una minúscula, una mayúscula y un número"
+				/>
+				<Input
+				type="password"
+				name="confirmPassword"
+				placeholder="Confirmar contraseña"
+				register={register}
+				validation={{ required: true, validate: value => value === watch('password') || "Las contraseñas no coinciden" }}
+				errors={errors}
+				textAlert="Las contraseñas no coinciden"
+				/>
+				<Input
+				type="text"
+				name="pais"
+				placeholder="País"
+				register={register}
+				validation={{ required: true, maxLength: 12 }}
+				errors={errors}
+				textAlert="El campo es requerido"
+				/>
+				<Input
+				type="text"
+				name="provincia"
+				placeholder="Provincia"
+				register={register}
+				validation={{ required: true, maxLength: 12 }}
+				errors={errors}
+				textAlert="El campo es requerido"
+				/>
+				<Input
+				type="text"
+				name="localidad"
+				placeholder="Localidad"
+				register={register}
+				validation={{ required: true, maxLength: 12 }}
+				errors={errors}
+				textAlert="El campo es requerido"
+				/>
+
 				<div>
 					<select
 						className='bg-white max-w-xl	grid justify-center p-5 pl-7 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg lg:w-2/'
