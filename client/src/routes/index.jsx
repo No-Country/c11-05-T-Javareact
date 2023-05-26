@@ -4,6 +4,7 @@ import NotFound from '../pages/NotFound/NotFound';
 import Home from '../pages/Home/Home';
 import Register from '../pages/Register/Register';
 import Services from '../pages/Services/Services';
+import Login from '../pages/Login/Login';
 
 export const router = createBrowserRouter([
 	{
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
 					{
 						index: true,
 						element: <Home />,
+					},
+					{
+						path: '/login',
+						element: <Login />,
 					},
 					{
 						path: '/register',
