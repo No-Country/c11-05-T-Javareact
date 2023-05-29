@@ -17,6 +17,7 @@
 	--tertiaryColor: #53d46b;
 	--backgroundColor: #f0f0f2;
 	--fontPrimary: 'Galano', sans-serif;
+	--fontBold: 'Galano Bold', sans-serif;
 }
 
 /* Reseteamos los margin y paddings de todas las etiquetas */
