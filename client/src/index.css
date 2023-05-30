@@ -48,6 +48,7 @@ html {
 	width: 100%;
 	font-size: 100%;
 	font-family: var(--fontPrimary);
+	letter-spacing: 0.1em;
 	background-color: var(--backgroundColor);
 	display: grid;
 	grid-template-rows: auto 1fr auto;
