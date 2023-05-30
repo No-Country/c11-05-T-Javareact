@@ -1,22 +1,15 @@
 .container-carrusel {
-	margin: 0 auto;
+	margin: 0 0 0 3rem;
 	overflow-x: hidden;
-	max-width: 1218px;
-	height: 350px;
+	width: 100vw;
 }
 .carrusel {
+	margin: 1rem 0 1rem 1rem;
 	display: flex;
+	gap: 3rem;
 	cursor: grab;
 }
-.item {
-	height: 300px;
-	min-width: 372px;
-	padding: 2rem;
-}
+
 .item img {
-	object-fit: cover;
-	aspect-ratio: 1/1;
-	overflow: hidden;
 	pointer-events: none;
-	border-radius: 15px;
 }

@@ -1,18 +1,16 @@
 .div-container__description {
-	display: flex;
+	max-width: 1500px;
+	height: 450px;
 	margin: auto;
 	margin-top: 200px;
-	flex-direction: row;
-	justify-content: center;
-	width: 1216px;
-	height: 336px;
+	display: flex;
+	align-items: center;
 	gap: 6rem;
 }
 .div-container__titulo {
-	width: 612px;
-}
-
-.div-container__img {
-	width: 612px;
-	height: 336px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 2rem;
 }

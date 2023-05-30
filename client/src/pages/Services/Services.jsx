@@ -1,7 +1,7 @@
 import Card from '../../components/Card/Card';
 import MyTitle from '../../components/Common/MyTitle/MyTitle';
 import SearchBar from '../../components/Common/SearchBar/SearchBar';
-import { JOBS_DATA } from '../../constants/images';
+import { JOBS_DATA } from '../../constants/jobs';
 
 const Services = () => {
 	return (
@@ -13,7 +13,14 @@ const Services = () => {
 				</div>
 				<div className='w-full flex flex-wrap gap-10 items-center justify-evenly'>
 					{JOBS_DATA.map((data, index) => {
-						return <Card imagen={data.imagen} titulo={data.titulo} key={index} />;
+						return (
+							<Card
+								imagen={data.imagen}
+								titulo={data.titulo}
+								description={data.description}
+								key={index}
+							/>
+						);
 					})}
 				</div>
 			</div>

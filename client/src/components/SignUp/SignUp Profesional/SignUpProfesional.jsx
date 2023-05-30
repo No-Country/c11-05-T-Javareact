@@ -22,7 +22,7 @@ const SignUpProfesional = () => {
 
 	const onSubmit = (data) => {
 		const formData = {
-			username: data.username,
+			// username: data.username,
 			name: data.nombre,
 			lastname: data.apellido,
 			email: data.email,
@@ -52,11 +52,11 @@ const SignUpProfesional = () => {
 
 	return (
 		<>
-			<MyTitle>Registro como profesional</MyTitle>
+			<MyTitle extraClass='text-white'>Crea tu cuenta como profesional</MyTitle>
 			<form
-				className='grid grid-cols-2 gap-7 justify-center'
+				className='grid grid-cols-2 gap-7 justify-center w-full'
 				onSubmit={handleSubmit(onSubmit)}>
-				<Input
+				{/* <Input
 					type='text'
 					name='username'
 					placeholder='Nombre de usuario'
@@ -64,7 +64,7 @@ const SignUpProfesional = () => {
 					validation={{ required: true, maxLength: 30 }}
 					errors={errors}
 					textAlert='El campo es requerido'
-				/>
+				/> */}
 				<Input
 					type='text'
 					name='nombre'
@@ -185,8 +185,8 @@ const SignUpProfesional = () => {
 					)}
 				</div>
 				<div className='grid col-span-2	pr-5 justify-end'>
-					<MyButton type='submit' typeStyle='primary'>
-						Registrarse
+					<MyButton type='submit' typeStyle='tertiary'>
+						Crear cuenta
 					</MyButton>
 				</div>
 			</form>

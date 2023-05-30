@@ -22,7 +22,7 @@ const SignUpUser = () => {
 
 	const onSubmit = (data) => {
 		const formData = {
-			username: data.username,
+			// username: data.username,
 			name: data.nombre,
 			lastname: data.apellido,
 			email: data.email,
@@ -51,11 +51,11 @@ const SignUpUser = () => {
 
 	return (
 		<>
-			<MyTitle>Crea tu cuenta</MyTitle>
+			<MyTitle extraClass='text-white'>Crea tu cuenta</MyTitle>
 			<form
-				className='grid grid-cols-2 gap-7 justify-center'
+				className='grid grid-cols-2 gap-7 justify-center w-full'
 				onSubmit={handleSubmit(onSubmit)}>
-				<Input
+				{/* <Input
 					type='text'
 					name='username'
 					placeholder='Nombre de usuario'
@@ -63,7 +63,7 @@ const SignUpUser = () => {
 					validation={{ required: true, maxLength: 30 }}
 					errors={errors}
 					textAlert='El campo es requerido'
-				/>
+				/> */}
 				<Input
 					type='text'
 					name='nombre'
@@ -157,7 +157,7 @@ const SignUpUser = () => {
 					textAlert='El campo es requerido'
 				/>
 				<div className='grid col-span-2 pr-5 justify-end'>
-					<MyButton type='submit' typeStyle='primary'>
+					<MyButton type='submit' typeStyle='tertiary'>
 						Crear cuenta
 					</MyButton>
 				</div>

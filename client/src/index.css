@@ -2,7 +2,11 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap'); */
 @font-face {
 	font-family: 'Galano';
-	src: url('./assets/font/GalanoGrotesque.woff');
+	src: url('./assets/font/GalanoGrotesque.otf');
+}
+@font-face {
+	font-family: 'GalanoBold';
+	src: url('./assets/font/GalanoGrotesqueBold.otf');
 }
 
 @tailwind base;
@@ -11,10 +15,11 @@
 
 /* Aquí definimos las Custom properties */
 :root {
-	--primaryColor: #0d2231;
+	--primaryColor: #2b3a3e;
 	--secondaryColor: #ff7f5d;
-	--secondaryColorHover: hsl(13, 100%, 50%);
-	--tertiaryColor: #53d46b;
+	--secondaryColorBg: #fa543cb2;
+	--secondaryColorHover: #c36244;
+	--tertiaryColor: #8ca2c0;
 	--backgroundColor: #f0f0f2;
 	--fontPrimary: 'Galano', sans-serif;
 }

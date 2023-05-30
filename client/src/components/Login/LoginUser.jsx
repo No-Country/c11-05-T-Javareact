@@ -4,6 +4,8 @@ import MyButton from '../Common/MyButton/MyButton';
 import { useLoginUserMutation } from '../../redux/api/apiSlice';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import loginImg from '../../assets/login.png';
+import MyTitle from '../Common/MyTitle/MyTitle';
 
 const LoginUser = () => {
 	const [
@@ -19,11 +21,12 @@ const LoginUser = () => {
 	} = useForm();
 
 	const onSubmit = (data) => {
-		const login = {
+		/* const login = {
 			username: data.username,
 			password: data.password,
 		};
-		loginUser(login);
+		loginUser(login); */
+		loginUser(data);
 		reset();
 	};
 
@@ -37,16 +40,14 @@ const LoginUser = () => {
 	}, [isSuccess, isError]);
 
 	return (
-		<div className='container my-28 mx-auto max-w-screen-2xl bg-[--secondaryColor] rounded-3xl'>
-			<div className='flex'>
-				<div className='w-1/2 pt-32'>
-					<h2 className='text-5xl text-center font-bold text-white'>
-						Iniciar Sesión
-					</h2>
+		<div className='flex items-center justify-center h-full'>
+			<div className='flex justify-between items-center w-[60%] bg-[--secondaryColor] rounded-3xl overflow-hidden mt-24'>
+				<div className='w-full px-12'>
+					<MyTitle extraClass='text-white text-center'>Iniciar Sesión</MyTitle>
 					<form
 						className='pt-20 grid grid-cols-1 gap-7 justify-center'
 						onSubmit={handleSubmit(onSubmit)}>
-						<Input
+						{/* <Input
 							type='text'
 							name='username'
 							placeholder='Nombre de usuario'
@@ -54,7 +55,7 @@ const LoginUser = () => {
 							validation={{ required: true, maxLength: 30 }}
 							errors={errors}
 							textAlert='El campo es requerido'
-						/>
+						/> */}
 						<Input
 							type='email'
 							name='email'
@@ -83,30 +84,23 @@ const LoginUser = () => {
 							¿Olvidaste tu contraseña?
 						</a>
 						<div className=' flex justify-end mr-20'>
-							<MyButton type='submit' typeStyle='primary'>
+							<MyButton type='submit' typeStyle='tertiary'>
 								Iniciar sesión
 							</MyButton>
 						</div>
 					</form>
 					<div className='grid col-span-2	pt-8 pr-5 justify-center'>
-						<h3 className='text-4xl text-center font-bold text-white'>
+						<h4 className='text-4xl text-center font-bold text-white'>
 							¿No tenés cuenta?
-						</h3>
+						</h4>
 						<div className='m-auto pt-10'>
-							<MyButton typeStyle='primary'>
+							<MyButton typeStyle='tertiary'>
 								<Link to='/register'>Registrate aquí</Link>
 							</MyButton>
 						</div>
 					</div>
 				</div>
-				<div className='w-1/2 flex justify-end'>
-					<img
-						className='ml-4 rounded-r-3xl'
-						src='https://picsum.photos/200/230'
-						alt='Imagen de perfil'
-						style={{ width: '100%' }}
-					/>
-				</div>
+				<img className='w-auto h-full' src={loginImg} alt='Imagen de perfil' />
 			</div>
 		</div>
 	);

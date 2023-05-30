@@ -1,6 +1,9 @@
-const MyTitle = ({ children }) => {
+const MyTitle = ({ children, extraClass }) => {
 	return (
-		<h2 className='text-6xl font-semibold text-[--secondaryColor]'>{children}</h2>
+		<h2
+			className={`text-6xl font-[GalanoBold] text-[--secondaryColor] ${extraClass}`}>
+			{children}
+		</h2>
 	);
 };
 export default MyTitle;
