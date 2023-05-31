@@ -1,8 +1,8 @@
-import React from 'react'
 import { useForm } from 'react-hook-form'
 import MyTitle from '../../../components/Common/MyTitle/MyTitle'
 import MyButton from '../../../components/Common/MyButton/MyButton'
 import Input from '../../../components/SignUp/Input/InputText'
+import './EmergenyContact.css'
 
 
 const EmergencyContact = () => {
@@ -10,10 +10,12 @@ const EmergencyContact = () => {
 		register,
 		formState: { errors },
 		handleSubmit,
+    reset
 	} = useForm();
 
   const onSubmit = (data) => {
 		console.log(data);
+    reset()
 	};
   return (
     <div className='container m-auto'>
@@ -75,7 +77,7 @@ const EmergencyContact = () => {
               required: true,
             }}
             errors={errors}
-            textAlert='No es una dirección de correo válida'
+            textAlert='El campo es requerido'
           />
           <Input
             type='text'
@@ -86,7 +88,7 @@ const EmergencyContact = () => {
               required: true,
               }}
             errors={errors}
-            textAlert='Los correos no coinciden'
+            textAlert='El campo es requerido'
           />
         </div>
 				<Input
@@ -96,7 +98,7 @@ const EmergencyContact = () => {
 					register={register}
 					validation={{required: true,}}
 					errors={errors}
-					textAlert='Mínimo 8 caracteres, una minúscula, una mayúscula y un número'
+					textAlert='El campo es requerido'
 				/>
         <div className='flex justify-center space-x-9'>
           <Input
@@ -108,7 +110,7 @@ const EmergencyContact = () => {
               required: true,
             }}
             errors={errors}
-            textAlert='Las contraseñas no coinciden'
+            textAlert='El campo es requerido'
           />
           <Input
             type='text'
@@ -120,21 +122,13 @@ const EmergencyContact = () => {
             textAlert='El campo es requerido'
           />  
         </div>
-        <div className=''>
-          <Input
-            type='file'
-            name='dpto'
-            placeholder='Departamento'
-            register={register}
-            validation={{ required: true, maxLength: 20 }}
-            errors={errors}
-            textAlert='El campo es requerido'
-          /> 
+        <div className='grid justify-center p-12  col-span-2'>
+          <input type='file'  className=' max-w-6xl rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg file:bg-none file:border-none file:p-20 file:bg-orange-500 cursor-pointer ' />
         </div>
-          <textarea 
-          className='col-span-2 bg-white max-w-6xl grid justify-center p-12 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg'
+          <textarea name='descripcion'
+          className=' description textChange col-span-2 bg-white max-w-6xl grid justify-center p-12 rounded-3xl shadow w-full mx-auto ring-1 ring-red-400 placeholder-black text-lg'
           placeholder='Descripción del trabajo
-          (Describe lo mas detalladamente posible, el trabajo que debe realizar el profesional)'
+(Describe lo mas detalladamente posible, el trabajo que debe realizar el profesional)' {...register('descripcion', {required:true})}
           >
           </textarea>
 				<div className='grid col-span-2	pr-5 mb-2 justify-end'>
