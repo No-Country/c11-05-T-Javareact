@@ -18,6 +18,7 @@ const Services = () => {
 								imagen={data.imagen}
 								titulo={data.titulo}
 								description={data.description}
+								id={data.id}
 								key={index}
 							/>
 						);

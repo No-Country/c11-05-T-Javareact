@@ -25,6 +25,7 @@ const Carousel = () => {
 							imagen={job.imagen}
 							titulo={job.titulo}
 							description={job.description}
+							id={job.id}
 						/>
 					</motion.div>
 				))}
