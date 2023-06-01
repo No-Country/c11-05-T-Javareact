@@ -9,9 +9,9 @@ const Card = ({ imagen, titulo, description, id }) => {
 			<div className='card-content'>
 				<h5 className='font-[GalanoBold]'>{titulo}</h5>
 				<p>{description}</p>
-				<MyButton typeStyle='tertiary self-end'>
-					<Link to={`/services/${id}`}>Explorar</Link>
-				</MyButton>
+				<Link to={`/services/${id}`} className='self-end'>
+					<MyButton typeStyle='tertiary'>Explorar</MyButton>
+				</Link>
 			</div>
 		</div>
 	);

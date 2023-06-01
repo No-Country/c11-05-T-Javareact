@@ -18,9 +18,9 @@ const Home = () => {
 						En Myservice, vas a poder encontrar profesionales de confianza para
 						realizar todos los trabajos de mantenimiento de tu hogar
 					</p>
-					<MyButton typeStyle='secondary self-end'>
-						<Link to='/services'>Explorar</Link>
-					</MyButton>
+					<Link to='/services' className='self-end'>
+						<MyButton typeStyle='secondary'>Explorar</MyButton>
+					</Link>
 				</div>
 				<img className='rounded-3xl h-full w-fit' src={homeImg1} alt='' />
 			</div>
@@ -39,9 +39,9 @@ const Home = () => {
 						Si sos un profesional que brinda servicios de mantenimiento del hogar, te
 						invitamos a formar parte de MyService para poder expandir tu negocio
 					</p>
-					<MyButton typeStyle='secondary self-end'>
-						<Link to='/register'>Registrarme como profecional</Link>
-					</MyButton>
+					<Link to='/register' className='self-end'>
+						<MyButton typeStyle='secondary'>Registrarme como profecional</MyButton>
+					</Link>
 				</div>
 			</div>
 

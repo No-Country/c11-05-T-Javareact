@@ -94,9 +94,9 @@ const LoginUser = () => {
 							¿No tenés cuenta?
 						</h4>
 						<div className='m-auto pt-10'>
-							<MyButton typeStyle='tertiary'>
-								<Link to='/register'>Registrate aquí</Link>
-							</MyButton>
+							<Link to='/register'>
+								<MyButton typeStyle='tertiary'>Registrate aquí</MyButton>
+							</Link>
 						</div>
 					</div>
 				</div>

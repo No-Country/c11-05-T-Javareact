@@ -12,9 +12,9 @@ const NotFound = () => {
 					<p className='text-3xl'>
 						Lo sentimos, la página que estas <br></br>buscando no existe
 					</p>
-					<MyButton typeStyle='tertiary self-end mt-16'>
-						<Link to='/'>Volver al inicio</Link>
-					</MyButton>
+					<Link to='/' className='self-end mt-16'>
+						<MyButton typeStyle='tertiary'>Volver al inicio</MyButton>
+					</Link>
 				</div>
 				<div>
 					<img src={imageError}></img>

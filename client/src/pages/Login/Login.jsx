@@ -1,7 +1,11 @@
-// import LoginUser from '../../components/Login/LoginUser';
-import EmergencyContact from "../JobForms/EmergencyContact/EmergencyContact";
+import LoginUser from '../../components/Login/LoginUser';
+// import EmergencyContact from '../JobForms/EmergencyContact/EmergencyContact';
 
 const Login = () => {
-	return <EmergencyContact />;
+	return (
+		<>
+			<LoginUser />
+		</>
+	);
 };
 export default Login;

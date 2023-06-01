@@ -12,15 +12,15 @@ const Navbar = () => {
 			<div className='flex gap-10 text-xl flex-1'>
 				<NavLink to='/'>Inicio</NavLink>
 				<NavLink to='/services'>Servicios</NavLink>
-				<NavLink to='/contact'>Contacto</NavLink>
+				<NavLink to='/jobs'>Trabajos Disponibles</NavLink>
 			</div>
 			<div className='flex justify-end items-center gap-4'>
-				<MyButton typeStyle='secondary'>
-					<Link to='/login'>Iniciar sesión</Link>
-				</MyButton>
-				<MyButton typeStyle='primary'>
-					<Link to='/register'>Registrarse</Link>
-				</MyButton>
+				<Link to='/login'>
+					<MyButton typeStyle='secondary'>Iniciar sesión</MyButton>
+				</Link>
+				<Link to='/register'>
+					<MyButton typeStyle='primary'>Registrarse</MyButton>
+				</Link>
 			</div>
 		</nav>
 	);
