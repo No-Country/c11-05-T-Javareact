@@ -20,7 +20,7 @@ const Input = ({
 				{...register(name, validation)}
 			/>
 			{error && (
-				<span className='font-extralight text-sm md:ml-12 p-2'>
+				<span className='font-extralight text-sm md:ml-20 p-2'>
 					{error.type === 'required' && textAlert}
 					{error.type === 'maxLength' && textAlert}
 					{error.type === 'pattern' && textAlert}
