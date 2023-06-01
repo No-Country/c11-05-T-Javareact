@@ -1,6 +1,10 @@
 import LoginUser from '../../components/Login/LoginUser';
 
 const Login = () => {
-	return <LoginUser />;
+	return (
+	<div>
+		<LoginUser />
+	</div>
+	)
 };
 export default Login;
