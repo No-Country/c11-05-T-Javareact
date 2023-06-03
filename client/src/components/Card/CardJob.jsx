@@ -1,5 +1,8 @@
 import { useState } from 'react';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import MyButton from '../Common/MyButton/MyButton';
+import SendBudget from '../JobForms/SendBudget/SendBudget';
 
 const CardJob = ({
 	title,
@@ -20,9 +23,20 @@ const CardJob = ({
 		setShowDetails(false);
 	};
 
+	const MySwal = withReactContent(Swal);
+
+	const handleBudget = () => {
+		MySwal.fire({
+			html: <SendBudget />,
+			showConfirmButton: false,
+			width: 'fit-content',
+			scrollbarPadding: false,
+		});
+	};
+
 	return (
 		<div
-			className={`bg-[--secondaryColor] p-5 ml-20 mr-20 rounded-3xl border-solid border-2 border-[--primaryColor] transition-all px-10 mb-10 ${
+			className={`bg-[--secondaryColor] p-5 mx-20 rounded-3xl border-solid border-2 border-[--primaryColor] transition-all px-10 ${
 				showDetails ? 'p-20 pl-20 pr-20' : ''
 			}`}>
 			<div className='grid grid-cols-2 gap-4'>
@@ -61,7 +75,7 @@ const CardJob = ({
 							</MyButton>
 						</div>
 						<div className='font-bold'>
-							<MyButton typeStyle='tertiary' onClick={toggleDetails}>
+							<MyButton typeStyle='tertiary' onClick={handleBudget}>
 								Enviar presupuesto
 							</MyButton>
 						</div>

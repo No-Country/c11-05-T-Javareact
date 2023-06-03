@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { JOBS_DATA } from '../../constants/jobs';
-import './Carousel.css';
-import Card from '../Card/Card';
 import { useEffect, useRef, useState } from 'react';
+import { JOBS_DATA } from '../../constants/jobs';
+import Card from '../Card/Card';
+import './Carousel.css';
 
 const Carousel = () => {
 	const [carouselWith, setCarouselWith] = useState(0);

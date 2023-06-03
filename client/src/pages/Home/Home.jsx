@@ -1,12 +1,12 @@
-import Carousel from '../../components/Carousel/Carousel';
 import { Link } from 'react-router-dom';
-import MyButton from '../../components/Common/MyButton/MyButton';
-import MyTitle from '../../components/Common/MyTitle/MyTitle';
 import homeImg1 from '../../assets/home/home1.png';
 import homeImg2 from '../../assets/home/home2.png';
-import './home.css';
-import { TESTIMONIALS_DATA } from '../../constants/testimonials';
+import Carousel from '../../components/Carousel/Carousel';
+import MyButton from '../../components/Common/MyButton/MyButton';
+import MyTitle from '../../components/Common/MyTitle/MyTitle';
 import TestimonialCard from '../../components/TestimonialCard/TestimonialCard';
+import { TESTIMONIALS_DATA } from '../../constants/testimonials';
+import './home.css';
 
 const Home = () => {
 	return (
@@ -40,7 +40,7 @@ const Home = () => {
 						invitamos a formar parte de MyService para poder expandir tu negocio
 					</p>
 					<Link to='/register' className='self-end'>
-						<MyButton typeStyle='secondary'>Registrarme como profecional</MyButton>
+						<MyButton typeStyle='secondary'>Registrarme como profesional</MyButton>
 					</Link>
 				</div>
 			</div>

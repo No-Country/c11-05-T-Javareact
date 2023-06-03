@@ -1,12 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import Input from '../Input/InputText';
-import MyTitle from '../../Common/MyTitle/MyTitle';
-import MyButton from '../../Common/MyButton/MyButton';
+import { useDispatch } from 'react-redux';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import { useRegisterUserMutation } from '../../../redux/api/apiSlice';
+import { setCredentials } from '../../../redux/store/slices/authSlice';
+import MyButton from '../../Common/MyButton/MyButton';
+import MyTitle from '../../Common/MyTitle/MyTitle';
+import Input from '../Input/InputText';
 
 const SignUpUser = () => {
-	const [showModal, setShowModal] = useState(false);
+	const MySwal = withReactContent(Swal);
+	const dispatch = useDispatch();
+
 	const [
 		registerUser,
 		{ data: user, isSuccess, isError, error },
@@ -22,7 +28,6 @@ const SignUpUser = () => {
 
 	const onSubmit = (data) => {
 		const formData = {
-			// username: data.username,
 			name: data.nombre,
 			lastname: data.apellido,
 			email: data.email,
@@ -32,18 +37,29 @@ const SignUpUser = () => {
 			localidad: data.localidad,
 		};
 		registerUser(formData);
-	};
-
-	const closeModal = () => {
-		setShowModal(false);
+		reset();
 	};
 
 	// Logica para cuando el registro es exitoso
 	useEffect(() => {
 		if (isSuccess) {
 			console.log(user);
-			setShowModal(true);
-			reset();
+			dispatch(setCredentials(user));
+			MySwal.fire({
+				title: (
+					<h6 className='font-[GalanoBold] text-4xl mb-6 text-[--secondaryColor]'>
+						Te has registrado correctamente!
+					</h6>
+				),
+				icon: 'success',
+				html: (
+					<MyButton typeStyle='primary my-4' onClick={() => MySwal.close()}>
+						Aceptar
+					</MyButton>
+				),
+				showConfirmButton: false,
+				scrollbarPadding: false,
+			});
 		} else if (isError) {
 			console.log(error);
 		}
@@ -55,15 +71,6 @@ const SignUpUser = () => {
 			<form
 				className='grid grid-cols-2 gap-7 justify-center w-full'
 				onSubmit={handleSubmit(onSubmit)}>
-				{/* <Input
-					type='text'
-					name='username'
-					placeholder='Nombre de usuario'
-					register={register}
-					validation={{ required: true, maxLength: 30 }}
-					errors={errors}
-					textAlert='El campo es requerido'
-				/> */}
 				<Input
 					type='text'
 					name='nombre'
@@ -162,24 +169,6 @@ const SignUpUser = () => {
 					</MyButton>
 				</div>
 			</form>
-			{showModal && (
-				<div className='fixed inset-0 flex items-center justify-center z-50'>
-					<div className='bg-gray-800 bg-opacity-50 absolute inset-0 flex items-center justify-center'>
-						<div className='bg-white rounded-lg p-6 max-w-sm'>
-							<p className='text-center text-red-500 text-xl mb-4'>
-								Te has registrado correctamente!
-							</p>
-							<div className='flex items-center justify-center'>
-								<button
-									className='text-center bg-[--secondaryColor] text-white py-2 px-4 rounded hover:bg-[--secondaryColorHover] focus:outline-none'
-									onClick={closeModal}>
-									Aceptar
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			)}
 		</>
 	);
 };

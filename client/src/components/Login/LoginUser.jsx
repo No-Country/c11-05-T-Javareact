@@ -1,17 +1,25 @@
-import { useForm } from 'react-hook-form';
-import Input from '../SignUp/Input/InputText';
-import MyButton from '../Common/MyButton/MyButton';
-import { useLoginUserMutation } from '../../redux/api/apiSlice';
 import { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import loginImg from '../../assets/login.png';
+import { useLoginUserMutation } from '../../redux/api/apiSlice';
+import { setCredentials } from '../../redux/store/slices/authSlice';
+import MyButton from '../Common/MyButton/MyButton';
 import MyTitle from '../Common/MyTitle/MyTitle';
+import Input from '../SignUp/Input/InputText';
 
 const LoginUser = () => {
+	const MySwal = withReactContent(Swal);
+
 	const [
 		loginUser,
 		{ data: user, isSuccess, isError, error },
 	] = useLoginUserMutation();
+
+	const dispatch = useDispatch();
 
 	const {
 		register,
@@ -21,12 +29,11 @@ const LoginUser = () => {
 	} = useForm();
 
 	const onSubmit = (data) => {
-		/* const login = {
-			username: data.username,
+		const login = {
+			email: data.email,
 			password: data.password,
 		};
-		loginUser(login); */
-		loginUser(data);
+		loginUser(login);
 		reset();
 	};
 
@@ -34,6 +41,22 @@ const LoginUser = () => {
 	useEffect(() => {
 		if (isSuccess) {
 			console.log(user);
+			dispatch(setCredentials(user));
+			MySwal.fire({
+				title: (
+					<h6 className='font-[GalanoBold] text-4xl mb-6 text-[--secondaryColor]'>
+						Inicio de sesión exitoso!
+					</h6>
+				),
+				icon: 'success',
+				html: (
+					<MyButton typeStyle='primary my-4' onClick={() => MySwal.close()}>
+						Aceptar
+					</MyButton>
+				),
+				showConfirmButton: false,
+				scrollbarPadding: false,
+			});
 		} else if (isError) {
 			console.log(error);
 		}
@@ -47,15 +70,6 @@ const LoginUser = () => {
 					<form
 						className='pt-20 grid grid-cols-1 gap-7 justify-center'
 						onSubmit={handleSubmit(onSubmit)}>
-						{/* <Input
-							type='text'
-							name='username'
-							placeholder='Nombre de usuario'
-							register={register}
-							validation={{ required: true, maxLength: 30 }}
-							errors={errors}
-							textAlert='El campo es requerido'
-						/> */}
 						<Input
 							type='email'
 							name='email'
