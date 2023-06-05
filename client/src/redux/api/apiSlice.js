@@ -28,10 +28,10 @@ export const apiSlice = createApi({
 			}),
 		}),
 		getCategories: builder.query({
-			query: () => '/servicios/services',
+			query: () => '/categories',
 		}),
 		getCategoriesById: builder.query({
-			query: (id) => `/servicios/service/${id}`,
+			query: (id) => `/categories/${id}`,
 		}),
 		getProfesionalById: builder.query({
 			query: (id) => `/servicios/experts/${id}`,

@@ -1,11 +1,12 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/Logo.svg';
-import { selectCurrentToken } from '../../redux/store/slices/authSlice';
+import { logOut, selectCurrentToken } from '../../redux/store/slices/authSlice';
 import MyButton from '../Common/MyButton/MyButton';
 
 const Navbar = () => {
 	const token = useSelector(selectCurrentToken);
+	const dispatch = useDispatch();
 
 	return (
 		<nav className='w-full fixed h-24 px-10 flex items-center justify-between gap-28 z-10 bg-[--primaryColor] text-[--backgroundColor]'>
@@ -20,9 +21,16 @@ const Navbar = () => {
 			</div>
 			<div className='flex justify-end items-center gap-4'>
 				{token ? (
-					<MyButton typeStyle='primary'>
-						<i className='fa-solid fa-user mr-3'></i>Perfil
-					</MyButton>
+					<>
+						<Link to='/profile'>
+							<MyButton typeStyle='primary'>
+								<i className='fa-solid fa-user mr-3'></i>Perfil
+							</MyButton>
+						</Link>
+						<MyButton typeStyle='secondary' onClick={() => dispatch(logOut())}>
+							Cerrar sesión
+						</MyButton>
+					</>
 				) : (
 					<>
 						<Link to='/login'>
