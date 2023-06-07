@@ -6,6 +6,14 @@
 	border: 2px solid var(--secondaryColor);
 	position: relative;
 }
+
+@media (max-width:728px) {
+	.div-input{
+		width: 100%;
+
+	}
+
+}
 .input-home {
 	margin-left: 90px;
 	font-size: 20px;

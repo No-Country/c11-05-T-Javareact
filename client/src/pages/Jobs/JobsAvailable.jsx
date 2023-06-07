@@ -20,8 +20,8 @@ const JobsAvailable = () => {
 
 	return (
 		<div className='flex items-center justify-center min-h-screen'>
-			<div className='flex flex-col gap-14 w-[75%] my-28'>
-				<div className='flex items-end gap-16'>
+			<div className='flex flex-col gap-14 lg:w-[75%] my-28'>
+				<div className='flex flex-col lg:flex-row items-center lg:items-end gap-16'>
 					<MyTitle>Trabajos disponibles</MyTitle>
 					<MyButton typeStyle='secondary' onClick={addJobRequest}>
 						Agregar petición

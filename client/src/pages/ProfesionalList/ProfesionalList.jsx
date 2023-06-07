@@ -8,7 +8,7 @@ const ProfesionalList = () => {
 
 	return (
 		<div className='flex items-center justify-center min-h-screen'>
-			<div className='flex flex-col gap-14 w-[75%] my-28'>
+			<div className='flex flex-col gap-14 lg:w-[75%] my-28'>
 				<MyTitle>{params.id}</MyTitle>
 				<div className='flex flex-col gap-10'>
 					{profesional.map((prof) => (

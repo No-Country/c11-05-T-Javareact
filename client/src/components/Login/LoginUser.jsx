@@ -63,10 +63,10 @@ const LoginUser = () => {
 	}, [isSuccess, isError]);
 
 	return (
-		<div className='flex items-center justify-center h-full'>
-			<div className='flex justify-between items-center w-[60%] bg-[--secondaryColor] rounded-3xl overflow-hidden mt-24'>
+		<div className='flex items-center justify-center h-full '>
+			<div className='flex justify-between items-center w-full lg:w-[60%] bg-[--secondaryColor] lg:rounded-3xl overflow-hidden mt-24 p-20 lg:p-0'>
 				<div className='w-full px-12'>
-					<MyTitle extraClass='text-white text-center'>Iniciar Sesión</MyTitle>
+					<MyTitle extraClass='text-white text-center text-[50px]'>Iniciar Sesión</MyTitle>
 					<form
 						className='pt-20 grid grid-cols-1 gap-7 justify-center'
 						onSubmit={handleSubmit(onSubmit)}>
@@ -97,7 +97,7 @@ const LoginUser = () => {
 						<a className='text-right text-white cursor-pointer mr-28'>
 							¿Olvidaste tu contraseña?
 						</a>
-						<div className=' flex justify-end mr-20'>
+						<div className=' flex lg:justify-end justify-center  mr-30'>
 							<MyButton type='submit' typeStyle='tertiary'>
 								Iniciar sesión
 							</MyButton>
@@ -114,7 +114,7 @@ const LoginUser = () => {
 						</div>
 					</div>
 				</div>
-				<img className='w-auto h-full' src={loginImg} alt='Imagen de perfil' />
+				<img className='lg:w-auto hidden lg:block h-full' src={loginImg} alt='Imagen de perfil' />
 			</div>
 		</div>
 	);

@@ -1,10 +1,15 @@
 .container-carrusel {
-	margin: 0 0 0 3rem;
 	overflow-x: hidden;
 	width: 100vw;
 }
+@media (max-width:728px) {
+.container-carrusel{
+	margin: 0 0 0 1.5rem;
+}	
+}
+
 .carrusel {
-	margin: 1rem 0 1rem 1rem;
+	margin: 1rem 0 1rem 0rem;
 	display: flex;
 	gap: 3rem;
 	cursor: grab;

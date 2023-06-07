@@ -7,11 +7,11 @@ const Services = () => {
 	return (
 		<div className='h-full w-full flex items-center justify-center'>
 			<div className='container flex flex-col gap-24 my-28'>
-				<div className='w-full flex justify-evenly items-center mt-16'>
-					<MyTitle>Servicios para el hogar</MyTitle>
+				<div className='w-full flex justify-evenly gap-20 flex-col lg:flex-row items-center mt-16'>
+					<MyTitle extraClass="">Servicios para el hogar</MyTitle>
 					<SearchBar />
 				</div>
-				<div className='w-full flex flex-wrap gap-10 items-center justify-evenly'>
+				<div className='w-full flex flex-wrap gap-10 flex-col lg:flex-row items-center justify-evenly'>
 					{JOBS_DATA.map((data, index) => {
 						return (
 							<Card

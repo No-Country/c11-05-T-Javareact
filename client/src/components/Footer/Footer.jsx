@@ -5,7 +5,7 @@ import Logo from '../../assets/Logo.svg';
 
 const Footer = () => {
 	return (
-		<div className='w-full p-8 bg-[--primaryColor] text-[--backgroundColor]'>
+		<div className='w-full p-8 pl-0 bg-[--primaryColor] text-[--backgroundColor] '>
 			<div className='flex flex-col items-center gap-8 w-[80%] mx-auto'>
 				<div className='flex justify-between items-center w-full'>
 					<div className='flex items-center gap-8 text-4xl'>
@@ -31,14 +31,14 @@ const Footer = () => {
 							<i className='fa-brands fa-twitter'></i>
 						</Link>
 					</div>
-					<img src={Logo} alt='' className='w-[90px]' />
+					<img src={Logo} alt='' className='w-[90px] hidden lg:block' />
 					<div className='flex flex-col items-center gap-4'>
 						<img src={GooglePlayImg} alt='' />
 						<img src={AppStoreImg} alt='' />
 					</div>
 				</div>
-				<div className='h-[1.5px] w-[95%] bg-slate-600'></div>
-				<div className='flex justify-around items-center w-[80%]'>
+				<div className='h-[1.5px] w-[95%] bg-slate-600 '></div>
+				<div className='flex justify-around items-center w-[80%] flex-col lg:flex-row gap-5 '>
 					<div className='flex flex-col items-center gap-1 text-4xl'>
 						<i className='fa-regular fa-envelope text-[--secondaryColor]'></i>
 						<p className='text-lg font-[GalanoBold]'>MAIL</p>

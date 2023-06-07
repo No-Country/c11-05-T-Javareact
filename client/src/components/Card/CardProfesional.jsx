@@ -28,10 +28,10 @@ const CardProfesional = ({ ...props }) => {
 	};
 
 	return (
-		<div className='bg-[--secondaryColor] p-4 flex justify-between items-center rounded-3xl border-solid border-2 border-[--primaryColor] px-10 mx-20'>
-			<div className='flex items-center gap-4'>
+		<div className='bg-[--secondaryColor] lg:p-4 p-10 flex justify-between  items-center rounded-3xl border-solid border-2 border-[--primaryColor] lg:px-10 lg:mx-20 flex-col lg:flex-row'>
+			<div className='flex items-center gap-4 w-full '>
 				<img
-					className='w-24 rounded-full border-solid border-2 border-[--primaryColor]'
+					className='w-24 rounded-full overflow-hidden border-solid border-2 border-[--primaryColor]'
 					src={props.photo}
 					alt='Avatar'></img>
 				<div className='ml-4'>
@@ -40,7 +40,7 @@ const CardProfesional = ({ ...props }) => {
 				</div>
 			</div>
 			<div className='flex items-center gap-6'>
-				<div className='flex gap-6 font-bold'>
+				<div className='flex gap-6 font-bold pt-6'>
 					<MyButton
 						typeStyle='primary border-solid border-2 border-[--primaryColor] hover:border-[--primaryColor]'
 						onClick={handleBudget}>

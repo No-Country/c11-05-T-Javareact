@@ -10,11 +10,11 @@ import './home.css';
 
 const Home = () => {
 	return (
-		<div className='h-full w-full'>
-			<div className='div-container__description'>
-				<div className='div-container__titulo'>
-					<MyTitle>Todos los Servicios en un solo lugar</MyTitle>
-					<p className='text-xl text-[--tertiaryColor] w-[80%]'>
+		<div className='h-full w-full flex align-center flex-col'>
+			<div className='div-container__description flex flex-col-reverse justify-center mt-[20rem] lg:flex-row lg:mt-[10rem] lg:gap-6 gap-0'>
+				<div className='div-container__titulo '>
+					<MyTitle extraClass="" >Todos los Servicios en un solo lugar</MyTitle>
+					<p className='text-xl text-[--tertiaryColor] pt-8 w-[80%]'>
 						En Myservice, vas a poder encontrar profesionales de confianza para
 						realizar todos los trabajos de mantenimiento de tu hogar
 					</p>
@@ -26,29 +26,29 @@ const Home = () => {
 			</div>
 
 			{/* Carrusel de fotos */}
-			<div className='mt-[250px]'>
+			<div className='mt-[250px] ove'>
 				<Carousel />
 			</div>
 
 			{/* Trabaja con nosotros */}
-			<div className=' div-container__description'>
+			<div className=' div-container__description mb-20 flex flex-col lg:flex-row '>
 				<img className='rounded-3xl h-full w-fit' src={homeImg2} alt='' />
 				<div className='div-container__titulo'>
 					<MyTitle>Trabaja con nosotros</MyTitle>
-					<p className='text-xl text-[--tertiaryColor] w-[80%]'>
+					<p className='text-xl text-[--tertiaryColor] w-[80%] mt-6 '>
 						Si sos un profesional que brinda servicios de mantenimiento del hogar, te
 						invitamos a formar parte de MyService para poder expandir tu negocio
 					</p>
 					<Link to='/register' className='self-end'>
-						<MyButton typeStyle='secondary'>Registrarme como profesional</MyButton>
+						<MyButton typeStyle='secondary mt-6'>Registrarme como profesional</MyButton>
 					</Link>
 				</div>
 			</div>
 
 			{/* Testimonios */}
-			<div className='text-center my-[250px]'>
+			<div className='text-center mt-[30rem] lg:my-[250px] '>
 				<MyTitle>Testimonios</MyTitle>
-				<div className='mt-[100px] px-12 flex justify-evenly w-full'>
+				<div className='mt-[100px] flex-col lg:flex-row px-12 flex items-center gap-6 justify-evenly w-full'>
 					{TESTIMONIALS_DATA.map((data, index) => (
 						<TestimonialCard
 							key={index}

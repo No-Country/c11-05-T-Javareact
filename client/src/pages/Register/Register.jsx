@@ -8,7 +8,7 @@ const Register = () => {
 
 	return (
 		<div className='flex items-center justify-center h-full'>
-			<div className='w-[60%] rounded-3xl mt-24 bg-[--secondaryColor] flex flex-col p-12 gap-10'>
+			<div className='lg:w-[60%] lg:rounded-3xl mt-24 bg-[--secondaryColor] flex flex-col text-center lg:p-12 p-8 gap-10'>
 				<MyButton
 					typeStyle='tertiary self-center'
 					onClick={() => {

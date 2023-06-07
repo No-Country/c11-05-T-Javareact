@@ -36,10 +36,10 @@ const CardJob = ({
 
 	return (
 		<div
-			className={`bg-[--secondaryColor] p-5 mx-20 rounded-3xl border-solid border-2 border-[--primaryColor] transition-all px-10 ${
-				showDetails ? 'p-20 pl-20 pr-20' : ''
+			className={`bg-[--secondaryColor] p-5 lg:mx-20 ml-0 rounded-3xl border-solid border-2 border-[--primaryColor] transition-all  lg:px-10 ${
+				showDetails ? 'lg:p-20 lg:pl-20 lg:pr-20' : ''
 			}`}>
-			<div className='grid grid-cols-2 gap-4'>
+			<div className='grid grid-cols-2 pb-10 gap-4'>
 				<div className='flex flex-col'>
 					<p className='text-xl font-[GalanoBold] pb-2'>{title}</p>
 					<div className='pb-2'>
