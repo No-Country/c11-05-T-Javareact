@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { JOBS_DATA } from '../../constants/jobs';
+import { useGetCategoriesQuery } from '../../redux/api/apiSlice';
 import Card from '../Card/Card';
 import './Carousel.css';
 
 const Carousel = () => {
+	const { data } = useGetCategoriesQuery();
+
 	const [carouselWith, setCarouselWith] = useState(0);
 	const carousel = useRef();
 
@@ -19,12 +21,12 @@ const Carousel = () => {
 				drag='x'
 				dragConstraints={{ right: 0, left: -(carouselWith + 100) }}
 				whileTap={{ cursor: 'grabbing' }}>
-				{JOBS_DATA.map((job, index) => (
+				{data?.map((job, index) => (
 					<motion.div className='item' key={index}>
 						<Card
 							imagen={job.imagen}
 							titulo={job.titulo}
-							description={job.description}
+							description={job.descripcion}
 							id={job.id}
 						/>
 					</motion.div>

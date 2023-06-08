@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import AppStoreImg from '../../assets/AppStore.png';
 import GooglePlayImg from '../../assets/GooglePlay.png';
-import Logo from '../../assets/Logo.svg';
+import Logo from '/Logo.svg';
 
 const Footer = () => {
 	return (

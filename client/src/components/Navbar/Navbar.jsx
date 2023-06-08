@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
-import Logo from '../../assets/Logo.svg';
+import Logo from '/Logo.svg';
 import { logOut, selectCurrentToken } from '../../redux/store/slices/authSlice';
 import MyButton from '../Common/MyButton/MyButton';
 
@@ -15,9 +15,19 @@ const Navbar = () => {
 				<h2 className='text-4xl'>MyService</h2>
 			</Link>
 			<div className='flex gap-10 text-xl flex-1'>
-				<NavLink to='/'>Inicio</NavLink>
-				<NavLink to='/services'>Servicios</NavLink>
-				<NavLink to='/jobs'>Trabajos Disponibles</NavLink>
+				<NavLink to='/' className='hover:text-[--secondaryColor] transition-all'>
+					Inicio
+				</NavLink>
+				<NavLink
+					to='/services'
+					className='hover:text-[--secondaryColor] transition-all'>
+					Servicios
+				</NavLink>
+				<NavLink
+					to='/jobs'
+					className='hover:text-[--secondaryColor] transition-all'>
+					Trabajos Disponibles
+				</NavLink>
 			</div>
 			<div className='flex justify-end items-center gap-4'>
 				{token ? (

@@ -15,7 +15,7 @@ const SignUpProfesional = () => {
 
 	const [
 		registerUser,
-		{ data: user, isSuccess, isError, error },
+		{ data: user, isSuccess, isError },
 	] = useRegisterUserMutation();
 
 	const {
@@ -62,7 +62,24 @@ const SignUpProfesional = () => {
 				scrollbarPadding: false,
 			});
 		} else if (isError) {
-			console.log(error);
+			MySwal.fire({
+				title: (
+					<p className='font-[GalanoBold] text-4xl mb-6 text-[--secondaryColor]'>
+						Ha ocurrido un Error!
+					</p>
+				),
+				icon: 'error',
+				html: (
+					<>
+						<p className='mb-2'>Por favor vuelva a intentarlo</p>
+						<MyButton typeStyle='primary my-4' onClick={() => MySwal.close()}>
+							Aceptar
+						</MyButton>
+					</>
+				),
+				showConfirmButton: false,
+				scrollbarPadding: false,
+			});
 		}
 	}, [isSuccess, isError]);
 
