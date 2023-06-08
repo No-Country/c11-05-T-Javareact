@@ -28,12 +28,12 @@ Puedes acceder a la Test Suite del módulo Home en el siguiente enlace: [Test Su
 
 ## Test Suite Trabajos Disponibles.
 
-Puedes acceder a la Test Suite del módulo Quiero Adoptar en el siguiente enlace: [Test Suite Quiero Adoptar](https://docs.google.com/spreadsheets/d/17H72dLb8poapprFYiDYSShr-IOGx4t7qSnx6dsXgxYk/edit#gid=0)
+Puedes acceder a la Test Suite del módulo Trabajos Disponibles en el siguiente enlace: [Test Suite Trabajos Disponibles](https://docs.google.com/spreadsheets/d/17H72dLb8poapprFYiDYSShr-IOGx4t7qSnx6dsXgxYk/edit#gid=0)
 
 
 ## Test Suite Cuenta/Perfil de profesional.
 
-Puedes acceder a la Test Suite del módulo Formulario Dar En Adopción en el siguiente enlace: [Test Suite Quiero Adoptar](https://docs.google.com/spreadsheets/d/1ZQ11CJHAT3w1vsaaVfJhbuINT-7xt_a2j0TIMGYEmp0/edit#gid=0)
+Puedes acceder a la Test Suite del módulo Formulario Solicitar Presupuesto en el siguiente enlace: [Test Suite Formulario Servicios](https://docs.google.com/spreadsheets/d/1ZQ11CJHAT3w1vsaaVfJhbuINT-7xt_a2j0TIMGYEmp0/edit#gid=0)
 
 
 
