@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import loginImg from '../../assets/login.png';
@@ -14,12 +14,10 @@ import Input from '../SignUp/Input/InputText';
 const LoginUser = () => {
 	const MySwal = withReactContent(Swal);
 
-	const [
-		loginUser,
-		{ data: user, isSuccess, isError, error },
-	] = useLoginUserMutation();
+	const [loginUser, { data: user, isSuccess, isError }] = useLoginUserMutation();
 
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const {
 		register,
@@ -40,13 +38,12 @@ const LoginUser = () => {
 	// Logica del logueo
 	useEffect(() => {
 		if (isSuccess) {
-			console.log(user);
 			dispatch(setCredentials(user));
 			MySwal.fire({
 				title: (
-					<h6 className='font-[GalanoBold] text-4xl mb-6 text-[--secondaryColor]'>
+					<p className='font-[GalanoBold] text-4xl mb-6 text-[--secondaryColor]'>
 						Inicio de sesión exitoso!
-					</h6>
+					</p>
 				),
 				icon: 'success',
 				html: (
@@ -56,9 +53,27 @@ const LoginUser = () => {
 				),
 				showConfirmButton: false,
 				scrollbarPadding: false,
+				didClose: () => navigate('/profile'),
 			});
 		} else if (isError) {
-			console.log(error);
+			MySwal.fire({
+				title: (
+					<p className='font-[GalanoBold] text-4xl mb-6 text-[--secondaryColor]'>
+						Ha ocurrido un Error!
+					</p>
+				),
+				icon: 'error',
+				html: (
+					<>
+						<p className='mb-2'>Por favor vuelva a intentarlo</p>
+						<MyButton typeStyle='primary my-4' onClick={() => MySwal.close()}>
+							Aceptar
+						</MyButton>
+					</>
+				),
+				showConfirmButton: false,
+				scrollbarPadding: false,
+			});
 		}
 	}, [isSuccess, isError]);
 

@@ -3,17 +3,46 @@ import withReactContent from 'sweetalert2-react-content';
 import MyButton from '../../components/Common/MyButton/MyButton';
 import RequestBudget from '../JobForms/RequestBudget/RequestBudget';
 import ProfileCard from '../ProfileCard/ProfileCard';
+import { useSelector } from 'react-redux';
+import { selectCurrentToken } from '../../redux/store/slices/authSlice';
+import { useNavigate } from 'react-router-dom';
 
 const CardProfesional = ({ ...props }) => {
+	const token = useSelector(selectCurrentToken);
 	const MySwal = withReactContent(Swal);
+	const navigate = useNavigate();
 
 	const handleBudget = () => {
-		MySwal.fire({
-			html: <RequestBudget />,
-			showConfirmButton: false,
-			width: 'fit-content',
-			scrollbarPadding: false,
-		});
+		if (!token) {
+			MySwal.fire({
+				title: (
+					<h6 className='font-[GalanoBold] text-4xl mb-4 text-[--secondaryColor]'>
+						Acceso no permitido!
+					</h6>
+				),
+				icon: 'error',
+				html: (
+					<>
+						<p className='mb-2'>
+							Porfavor inicie sesión para poder contactar con el Profesional
+						</p>
+						<MyButton typeStyle='primary my-4' onClick={() => MySwal.close()}>
+							Aceptar
+						</MyButton>
+					</>
+				),
+				showConfirmButton: false,
+				scrollbarPadding: false,
+				didClose: () => navigate('/login'),
+			});
+		} else {
+			MySwal.fire({
+				html: <RequestBudget />,
+				showConfirmButton: false,
+				width: 'fit-content',
+				scrollbarPadding: false,
+			});
+		}
 	};
 
 	const handleProfile = () => {
@@ -28,10 +57,10 @@ const CardProfesional = ({ ...props }) => {
 	};
 
 	return (
-		<div className='bg-[--secondaryColor] lg:p-4 p-10 flex justify-between  items-center rounded-3xl border-solid border-2 border-[--primaryColor] lg:px-10 lg:mx-20 flex-col lg:flex-row'>
-			<div className='flex items-center gap-4 w-full '>
+		<div className='bg-[--secondaryColor] lg:p-4 p-10 flex justify-between items-center rounded-3xl border-solid border-2 border-[--primaryColor] lg:px-10 lg:mx-20 flex-col lg:flex-row'>
+			<div className='flex items-center gap-4 w-full lg:w-auto'>
 				<img
-					className='w-24 rounded-full overflow-hidden border-solid border-2 border-[--primaryColor]'
+					className='w-24 rounded-full border-solid border-2 border-[--primaryColor]'
 					src={props.photo}
 					alt='Avatar'></img>
 				<div className='ml-4'>

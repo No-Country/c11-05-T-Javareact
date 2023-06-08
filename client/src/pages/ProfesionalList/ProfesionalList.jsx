@@ -1,7 +1,7 @@
-import CardProfesional from '../../components/Card/CardProfesional';
-import { profesional } from '../../constants/profesional';
-import MyTitle from '../../components/Common/MyTitle/MyTitle';
 import { useParams } from 'react-router-dom';
+import CardProfesional from '../../components/Card/CardProfesional';
+import MyTitle from '../../components/Common/MyTitle/MyTitle';
+import { profesional } from '../../constants/profesional';
 
 const ProfesionalList = () => {
 	const params = useParams();

@@ -13,7 +13,7 @@ const Home = () => {
 		<div className='h-full w-full flex align-center flex-col'>
 			<div className='div-container__description flex flex-col-reverse justify-center mt-[20rem] lg:flex-row lg:mt-[10rem] lg:gap-6 gap-0'>
 				<div className='div-container__titulo '>
-					<MyTitle extraClass="" >Todos los Servicios en un solo lugar</MyTitle>
+					<MyTitle extraClass=''>Todos los Servicios en un solo lugar</MyTitle>
 					<p className='text-xl text-[--tertiaryColor] pt-8 w-[80%]'>
 						En Myservice, vas a poder encontrar profesionales de confianza para
 						realizar todos los trabajos de mantenimiento de tu hogar
@@ -26,7 +26,7 @@ const Home = () => {
 			</div>
 
 			{/* Carrusel de fotos */}
-			<div className='mt-[250px] ove'>
+			<div className='mt-[250px] lg:ml-6'>
 				<Carousel />
 			</div>
 
@@ -40,7 +40,9 @@ const Home = () => {
 						invitamos a formar parte de MyService para poder expandir tu negocio
 					</p>
 					<Link to='/register' className='self-end'>
-						<MyButton typeStyle='secondary mt-6'>Registrarme como profesional</MyButton>
+						<MyButton typeStyle='secondary mt-6'>
+							Registrarme como profesional
+						</MyButton>
 					</Link>
 				</div>
 			</div>
