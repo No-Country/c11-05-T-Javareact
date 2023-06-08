@@ -40,3 +40,8 @@ Puedes acceder a la Test Suite del módulo Formulario Solicitar Presupuesto en e
 ## Test Suite Cuenta/Perfil de Usuario.
 
 Puedes acceder a la Test Suite del módulo Cuenta/Perfil de Usuario en el siguiente enlace: [Test Suite Cuenta/Perfil de Usuario](https://docs.google.com/spreadsheets/d/1DkMaofLZ2FdKjTmEieHIxpmKgZF2Ouig6juPOhs4e5Q/edit#gid=0)
+
+
+## Reporte de Testing
+Puedes acceder al Reporte de Testing y al Checklist de los Casos de Prueba en los siguientes enlaces:
+[Reporte de Testing](https://docs.google.com/document/d/10N1rJNgatR-KrgQvSfhjkUSgAQ_8gbch1O2WxQlbZMM/edit) <-> [CheckList](https://docs.google.com/spreadsheets/d/1PaC68oXyIzFpxzCEUPAZCaWzDPqECyTpS0ZDFWB46-Q/edit#gid=0)
