@@ -60,7 +60,7 @@ const CardJob = ({
 					</div>
 					<div className={`${showDetails ? 'flex' : 'hidden'} flex-col`}>
 						<p className='text-white'>Imágenes</p>
-						<img src={imagenes} alt='Imágenes' />
+						<img className='w-[100px] mt-2' src={imagenes} alt='Imágenes' />
 					</div>
 				</div>
 			</div>

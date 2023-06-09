@@ -1,16 +1,14 @@
+import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import MyButton from '../../components/Common/MyButton/MyButton';
+import { selectCurrentToken } from '../../redux/store/slices/authSlice';
 import RequestBudget from '../JobForms/RequestBudget/RequestBudget';
 import ProfileCard from '../ProfileCard/ProfileCard';
-import { useSelector } from 'react-redux';
-import { selectCurrentToken } from '../../redux/store/slices/authSlice';
-import { useNavigate } from 'react-router-dom';
 
 const CardProfesional = ({ ...props }) => {
 	const token = useSelector(selectCurrentToken);
 	const MySwal = withReactContent(Swal);
-	const navigate = useNavigate();
 
 	const handleBudget = () => {
 		if (!token) {
@@ -33,7 +31,6 @@ const CardProfesional = ({ ...props }) => {
 				),
 				showConfirmButton: false,
 				scrollbarPadding: false,
-				didClose: () => navigate('/login'),
 			});
 		} else {
 			MySwal.fire({
@@ -50,7 +47,6 @@ const CardProfesional = ({ ...props }) => {
 			html: <ProfileCard data={props} />,
 			showConfirmButton: false,
 			width: 'fit-content',
-			// background: 'var(--secondaryColorHover)',
 			background: 'transparent',
 			scrollbarPadding: false,
 		});
@@ -70,9 +66,7 @@ const CardProfesional = ({ ...props }) => {
 			</div>
 			<div className='flex items-center gap-6'>
 				<div className='flex gap-6 font-bold pt-6'>
-					<MyButton
-						typeStyle='primary border-solid border-2 border-[--primaryColor] hover:border-[--primaryColor]'
-						onClick={handleBudget}>
+					<MyButton typeStyle='primary' onClick={handleBudget}>
 						Contactar
 					</MyButton>
 					<MyButton typeStyle='tertiary' onClick={handleProfile}>

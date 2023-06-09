@@ -8,7 +8,7 @@ const Card = ({ imagen, titulo, description }) => {
 			<img className='card-img' src={imagen} alt='' />
 			<div className='card-content'>
 				<h5 className='font-[GalanoBold]'>{titulo}</h5>
-				<p>{description}</p>
+				<p className='card-text'>{description}</p>
 				<Link to={`/services/${titulo}`} className='self-end'>
 					<MyButton typeStyle='tertiary'>Explorar</MyButton>
 				</Link>
