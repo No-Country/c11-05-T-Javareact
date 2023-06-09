@@ -7,7 +7,7 @@ const Register = () => {
 	const [userProf, setUserProf] = useState(false);
 
 	return (
-		<div className='flex items-center justify-center h-full'>
+		<div className='flex items-center justify-center h-full bg-[--secondaryColor]'>
 			<div className='lg:w-[60%] lg:rounded-3xl mt-24 bg-[--secondaryColor] flex flex-col text-center lg:p-12 p-8 gap-10'>
 				<MyButton
 					typeStyle='tertiary self-center'

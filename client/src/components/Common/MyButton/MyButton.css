@@ -2,7 +2,7 @@
 	color: #fff;
 	background-color: var(--secondaryColor) !important;
 	padding: 12px 28px;
-	border: 2px solid var(--secondaryColor);
+	border: 2px solid var(--primaryColor);
 	box-shadow: 0 0 10px 2px #0000004b;
 	border-radius: 50px;
 	-webkit-border-radius: 50px;
@@ -18,7 +18,6 @@
 
 .primary:hover {
 	background-color: var(--secondaryColorHover) !important;
-	border-color: var(--secondaryColorHover);
 }
 
 .secondary {
